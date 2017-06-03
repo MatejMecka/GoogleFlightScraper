@@ -10,7 +10,17 @@ A Module that Scrapes the Google Page when a flight is given
 `npm install googleflightscraper`
 
 ### Usage:
+```js
+var tracker = require('googleflightscraper')
 
-TODO
+tracker("JU 500", function(flightinfo){
+
+var status = flightinfo["Status"]
+console.log(status)
+
+
+})
+
+```
 
 ### Options:
