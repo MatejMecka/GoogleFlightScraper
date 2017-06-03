@@ -1,0 +1,31 @@
+{
+  "name": "googleflightscraper",
+  "version": "1.0.0",
+  "description": "This is a Module that scrapes Google for Flight Information",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatejMecka/googleflightscraper.git"
+  },
+  "keywords": [
+    "flight",
+    "tracking",
+    "scraping",
+    "google",
+    "plane",
+    "airplane"
+  ],
+  "author": "“Matej <“matej.plavevski+github@gmail.com”>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MatejMecka/googleflightscraper/issues"
+  },
+  "homepage": "https://github.com/MatejMecka/googleflightscraper#readme",
+  "dependencies" : {
+    "request": "2.81.0",
+    "cheerio": "1.0.0-rc.1"
+  }
+}
