@@ -44,7 +44,7 @@ var cheerio = require('cheerio');
         else {	
 
 
-        	return "There was an Error performing the scraping operation. Probably caused by a captcha";
+        	callback("There was an Error performing the scraping operation. Probably caused by a captcha");
 
         }	
 
