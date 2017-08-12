@@ -25,28 +25,39 @@ var cheerio = require('cheerio');
         	var arrterminal = table.eq(17).text() + " " + table.eq(22).text();
         	var info = table.eq(1).text();
 
-        	var flightinfo = {
-        		Flight: flight, 
-        		Status: status, 
-        		DepartureCountry: depcountry, 
-        		DepartureTime: deptime, 
-        		DepartureTerminal: depterminal, 
-        		ArrivalCountry: arrcountry,
-        		ArrivalTime: arrtime,
-        		ArrivalTerminal:arrterminal,
-        		Information:info
-        	}
+		if(arrcountry == ''){
+						
+			throw new Error("The submitted Flight  was not found or doesn't exist!")
+		
+		}
+		
+                else {
 
-        	callback(flightinfo)
+                	var flightinfo = {
+                		Flight: flight, 
+                		Status: status, 
+                		DepartureCountry: depcountry, 
+                		DepartureTime: deptime, 
+                		DepartureTerminal: depterminal, 
+                		ArrivalCountry: arrcountry,
+                		ArrivalTime: arrtime,
+                		ArrivalTerminal:arrterminal,
+                		Information:info
+                	}
+
+                	callback(flightinfo)
+
+	       }	
 
         }
 
         else {	
 
 
-        	callback("There was an Error performing the scraping operation. Probably caused by a captcha");
+		throw new Error("There was a problem retriving the flight information. Probably caused by a captcha or there isn't an active internet connnection. Error Message: " + err.message)		
 
-        }	
+
+                }	
 
 
 	 });
@@ -54,3 +65,4 @@ var cheerio = require('cheerio');
 }
 
  module.exports = FlightTracking;
+
