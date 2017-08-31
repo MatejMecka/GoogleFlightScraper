@@ -18,9 +18,11 @@ var cheerio = require('cheerio');
         	var status = $('._lMf').text();
         	var table = $('.g  table td');
         	var depcountry = table.eq(8).text();
+                var depcode = table.eq(3).text();
         	var deptime = table.eq(4).text() + " " + table.eq(5).text();
         	var depterminal = table.eq(6).text() + " " + table.eq(11).text();
         	var arrcountry = table.eq(19).text();
+                var arrcode = table.eq(14).text();
         	var arrtime = table.eq(15).text() + " " + table.eq(16).text();
         	var arrterminal = table.eq(17).text() + " " + table.eq(22).text();
         	var info = table.eq(1).text();
@@ -37,9 +39,11 @@ var cheerio = require('cheerio');
                 		Flight: flight, 
                 		Status: status, 
                 		DepartureCountry: depcountry, 
+                                DepartureCode: depcode,
                 		DepartureTime: deptime, 
                 		DepartureTerminal: depterminal, 
                 		ArrivalCountry: arrcountry,
+                                ArrivalCode: arrcode,
                 		ArrivalTime: arrtime,
                 		ArrivalTerminal:arrterminal,
                 		Information:info
