@@ -1,4 +1,4 @@
-# GoogleFlightScraper
+# GoogleFlightScraper [![CircleCI](https://circleci.com/gh/MatejMecka/GoogleFlightScraper.svg?style=svg)](https://circleci.com/gh/MatejMecka/GoogleFlightScraper)
 A Module that Scrapes the Google Page when a flight is given
 
 ### Dependencies:
