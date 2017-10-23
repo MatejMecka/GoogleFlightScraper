@@ -1,10 +1,10 @@
 {
   "name": "googleflightscraper",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "description": "This is a Module that scrapes Google for Flight Information",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,14 @@
     "url": "https://github.com/MatejMecka/googleflightscraper/issues"
   },
   "homepage": "https://github.com/MatejMecka/googleflightscraper#readme",
-  "dependencies" : {
-    "request": "2.81.0",
-    "cheerio": "1.0.0-rc.1"
+  "dependencies": {
+    "chai": "^4.1.2",
+    "cheerio": "1.0.0-rc.1",
+    "mocha": "^4.0.1",
+    "request": "2.81.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
   }
 }
