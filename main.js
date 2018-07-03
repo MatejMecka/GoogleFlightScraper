@@ -13,7 +13,7 @@ function FlightTracking(flight, callback){
 		if (!err && resp.statusCode == 200){
 			var $ = cheerio.load(html)
 			var flight = $('h3', '#res').eq(0).text()
-			var status = $('._lMf').text()
+			var status = $('.bkcGhd').text()
 			var table = $('.g  table td')
 			var depcountry = table.eq(8).text()
 			var depcode = table.eq(3).text()

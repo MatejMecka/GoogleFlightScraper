@@ -1,6 +1,6 @@
 {
   "name": "googleflightscraper",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "This is a Module that scrapes Google for Flight Information",
   "main": "main.js",
   "scripts": {
