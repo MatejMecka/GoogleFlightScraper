@@ -14,18 +14,13 @@ A Module that Scrapes the Google Page when a flight is given
 var tracker = require('googleflightscraper')
 
 tracker("JU 500", function(flightinfo,error){
-
 	if (error) {
-
 		console.log(error.message)
-
 	}
-	
 	else {
 		var status = flightinfo["Status"]
 		console.log(status)
 	}
-
 })
 
 ```
