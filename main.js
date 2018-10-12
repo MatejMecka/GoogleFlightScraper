@@ -1,6 +1,6 @@
 'use strict'
-var request = require('request')
-var cheerio = require('cheerio')
+const request = require('request')
+const cheerio = require('cheerio')
 
 /**
  * Gives Flight information
@@ -10,7 +10,7 @@ var cheerio = require('cheerio')
 
 function FlightTracking(flight, callback){
 	request('http://www.google.com/search?q=' + flight, function(err,  resp, html) {
-		if (!err && resp.statusCode == 200){
+		if(!err && resp.statusCode == 200){
 			var $ = cheerio.load(html)
 			var flight = $('h3', '#res').eq(0).text()
 			var status = $('.bkcGhd').text()
@@ -29,9 +29,8 @@ function FlightTracking(flight, callback){
 				throw new Error('The submitted Flight  was not found or doesn\'t exist!')
 			}
 		
-			else {
-
-				var flightinfo = {
+			else{
+				const flightinfo = {
 					Flight: flight, 
 					Status: status, 
 					DepartureCountry: depcountry, 
@@ -44,24 +43,13 @@ function FlightTracking(flight, callback){
 					ArrivalTerminal:arrterminal,
 					Information:info
 				}
-
 				callback(flightinfo)
-
 			}	
-
 		}
-
-		else {	
-
-
-			throw new Error('There was a problem retriving the flight information. Probably caused by a captcha or there isn\'t an active internet connnection. Error Message: ' + err.message)		
-
-
+		else{	
+			throw new Error('There was a problem retriving the flight information. Probably caused by a captcha or there isn\'t an active internet connnection. Error Message: ' + err.message)
 		}	
-
-
 	})
-
 }
 
 module.exports = FlightTracking
